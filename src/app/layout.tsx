@@ -2,6 +2,7 @@ import { RouteChangeProvider } from "@/contexts/RouteChangedContext";
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
+import Navbar from "@/components/Navbar";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -21,6 +22,7 @@ export default function RootLayout({
 				<link rel="stylesheet" type="text/css" href="/fonts/style.css" />
 			</head>
 			<RouteChangeProvider>
+				<Navbar />
 				<body className={inter.className}>{children}</body>
 			</RouteChangeProvider>
 		</html>

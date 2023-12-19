@@ -55,11 +55,6 @@ export const RouteChangeProvider: React.FC<RouteChangeProviderProps> = ({
 }: RouteChangeProviderProps) => {
 	const [state, dispatch] = useReducer(reducer, initialState);
 
-	// Function to set isRouteChanged
-	const setIsRouteChanged = (value: boolean) => {
-		dispatch({ type: "SET_ROUTE_CHANGED", payload: value });
-	};
-
 	return (
 		<RouteChangeContext.Provider
 			value={{

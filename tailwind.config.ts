@@ -14,7 +14,8 @@ const config: Config = {
 				"satoshi-light": ["Satoshi Light"],
 			},
 			colors: {
-				dark: "#A4A5A6",
+				dark: "#1C2026",
+				"dark-highlight": "#0A0B0D",
 				light: "#A4A5A6",
 				"light-highlight": "#A4A5A6",
 			},
