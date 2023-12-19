@@ -4,6 +4,7 @@ import Image from "next/image";
 export default function Home() {
 	return (
 		<>
+			<Navbar />
 			<main className="main-page h-screen w-screen flex items-center justify-center p-3">
 				<section className="text-start text-light">
 					<div className="flex flex-col justify-center items-center lg:text-start gap-2 lg:justify-start lg:items-start">
