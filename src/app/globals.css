@@ -4,7 +4,7 @@
 
 
 .main-page {
-    background: rgb(46, 54, 65);
-    background: radial-gradient(circle, rgba(46, 54, 65, 1) 0%, rgba(10, 11, 13, 1) 100%);
+    background: rgb(27, 27, 30);
+    background: radial-gradient(circle, rgb(38, 38, 38) 0%, rgb(27, 27, 30) 100%);
     
 }

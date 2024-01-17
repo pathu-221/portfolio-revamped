@@ -70,7 +70,7 @@ export default function Menu() {
 						<animated.nav
 							style={style}
 							className={
-								"h-screen w-screen absolute top-0 left-0 bg-dark flex items-center justify-center gap-5"
+								"h-screen w-screen absolute top-0 left-0 bg-primary flex items-center justify-center gap-5"
 							}
 						>
 							<ul className="text-white flex flex-col gap-5 text-3xl uppercase font-bold font-satoshi-bold text-center">
