@@ -1,30 +1,30 @@
 import { type FC } from "react";
 import { TbCategory2 } from "react-icons/tb";
 import { FaTags } from "react-icons/fa6";
+import { FaGithub } from "react-icons/fa6";
+import { FiExternalLink } from "react-icons/fi";
 
 interface ProjectOverviewProps {}
 
 const ProjectOverview: FC<ProjectOverviewProps> = () => {
 	return (
-		<div className="flex-wrap col-span-1 w-full bg-black overflow-hidden flex flex-col rounded-xl hover:shadow-2xl hover:cursor-pointer max-h-[18rem]">
-			<img
-				src="https://images.unsplash.com/photo-1682685796063-d2604827f7b3?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDF8MHxlZGl0b3JpYWwtZmVlZHwxfHx8ZW58MHx8fHx8"
-				className="w-full object-cover aspect-video h-48"
-			/>
-			<div className="p-3 text-light overflow-hidden text-start">
-				<h4 className="block font-sans text-xl antialiased font-semibold leading-snug tracking-norma">
-					Example title
-				</h4>
-				<p className="text-sm py-3 antialiased text-gray-700 flex items-center">
-					<span className="flex gap-1 items-center justify-center">
-						<TbCategory2 size={16} />
-						<span>Full stack appp</span>
-					</span>
-					<span className="flex gap-1 items-center justify-center ml-16">
-						<FaTags size={16} />
-						<span>React js</span>
-					</span>
+		<div className="w-[30%] flex-grow bg-black rounded overflow-hidden shadow-2xl cursor-pointer">
+			<img src="https://images.unsplash.com/photo-1682687218904-de46ed992b58?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDF8MHxlZGl0b3JpYWwtZmVlZHw2fHx8ZW58MHx8fHx8" />
+			<div className="p-3">
+				<h5 className="mb-2 text-lg font-bold text-light">Lorem ipsum</h5>
+				<p className="mb-3 font-normal text-xs text-light-highlight">
+					Here are the biggest enterprise technology acquisitions of
 				</p>
+				<span className="flex items-center w-full justify-between text-light-highlight text-opacity-80 text-xs">
+					<div className="flex items-center gap-2">
+						<FaGithub />
+						<p>Source code</p>
+					</div>
+					<div className="flex items-center gap-2">
+						<FiExternalLink />
+						<p>Live</p>
+					</div>
+				</span>
 			</div>
 		</div>
 	);

@@ -1,5 +1,4 @@
 "use client";
-import PageLoader from "@/components/animation/PageLoader";
 import { useRouteChange } from "@/contexts/RouteChangedContext";
 import {
 	animated,
@@ -7,21 +6,19 @@ import {
 	useSpringRef,
 	useTransition,
 } from "@react-spring/web";
-import { Turn as Hamburger } from "hamburger-react";
 import Link from "next/link";
 import { usePathname, useRouter } from "next/navigation";
 import { useState } from "react";
 
 export default function Menu() {
-	const [active, setActive] = useState(false);
 	const router = useRouter();
 	const pathaname = usePathname();
-	const { dispatch } = useRouteChange();
+	const { dispatch, state } = useRouteChange();
 
 	const navRef = useSpringRef();
 	const menuItemsRef = useSpringRef();
 
-	const transitions = useTransition(active, {
+	const transitions = useTransition(state.menuActive, {
 		from: { opacity: 1, transform: "translateY(-100%)", borderRadius: "20%" },
 		enter: { opacity: 1, transform: "translateY(0%)", borderRadius: "0%" },
 		leave: {
@@ -34,7 +31,7 @@ export default function Menu() {
 
 	const items = ["Home", "About", "Projects", "Contact"];
 
-	const itemTransitions = useTransition(active ? items : [], {
+	const itemTransitions = useTransition(state.menuActive ? items : [], {
 		from: { opacity: 0, transform: "translateY(20px)" },
 		enter: { opacity: 1, transform: "translateY(0px)" },
 		leave: { opacity: 0, transform: "translateY(-20px)" },
@@ -43,7 +40,7 @@ export default function Menu() {
 		trail: 100,
 	});
 
-	useChain(active ? [navRef, menuItemsRef] : [menuItemsRef, navRef]);
+	useChain(state.menuActive ? [navRef, menuItemsRef] : [menuItemsRef, navRef]);
 
 	const [hoveredItem, setHoveredItem] = useState(-1);
 
@@ -63,14 +60,14 @@ export default function Menu() {
 	};
 
 	return (
-		<div className="text-light">
+		<div className="text-light ">
 			{transitions(
 				(style, value) =>
 					value && (
 						<animated.nav
 							style={style}
 							className={
-								"h-screen w-screen !fixed top-0 left-0 bg-primary flex items-center justify-center gap-5"
+								"h-screen z-1 absolute w-screen top-0 left-0 bg-primary flex items-center justify-center gap-5"
 							}
 						>
 							<ul className="text-white flex flex-col gap-5 text-3xl uppercase font-bold font-satoshi-bold text-center">
@@ -89,7 +86,10 @@ export default function Menu() {
 														"opacity-50"
 													}`}
 													onClick={() => {
-														setActive(false);
+														dispatch({
+															type: "TOGGLE_MENU",
+															payload: false,
+														});
 														handleNavigate(item);
 													}}
 												>
@@ -102,12 +102,6 @@ export default function Menu() {
 						</animated.nav>
 					)
 			)}
-			<Hamburger
-				className="text-light"
-				size={28}
-				toggled={active}
-				toggle={setActive}
-			/>
 		</div>
 	);
 }

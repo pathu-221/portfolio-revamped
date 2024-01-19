@@ -4,17 +4,19 @@ import React, { createContext, useContext, useReducer, ReactNode } from "react";
 // Define the types for your state
 type State = {
 	isRouteChanged: boolean;
+	menuActive: boolean;
 };
 
 // Define the types for your actions
 type Action = {
-	type: "SET_ROUTE_CHANGED";
-	payload: boolean;
+	type: string;
+	payload: any;
 };
 
 // Define the initial state
 const initialState: State = {
 	isRouteChanged: false,
+	menuActive: false,
 };
 
 // Create a reducer function to handle state changes
@@ -22,6 +24,8 @@ const reducer = (state: State, action: Action): State => {
 	switch (action.type) {
 		case "SET_ROUTE_CHANGED":
 			return { ...state, isRouteChanged: action.payload };
+		case "TOGGLE_MENU":
+			return { ...state, menuActive: action.payload };
 		default:
 			return state;
 	}
