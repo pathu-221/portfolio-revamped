@@ -9,9 +9,9 @@ export default function Home() {
 					<div className="flex flex-col justify-center items-center lg:text-start gap-2 lg:justify-start lg:items-start">
 						<p className="lg:text-xl lg:text-start"></p>
 						<p className="lg:text-xl lg:text-start">
-							Hi, I am Pratham Aggarwal
+							Hi, <span className="">I am Pratham Aggarwal</span>
 						</p>
-						<h1 className="lg:text-5xl font-bold text-3xl text-center uppercase font-satoshi lg:tracking-normal sm:tracking-widest">
+						<h1 className="lg:text-5xl font-bold text-3xl text-center uppercase font-satoshi lg:tracking-normal sm:tracking-widest text-primary">
 							Software Developer
 						</h1>
 						<p className="text-end lg:text-xl lg:self-end">from India</p>

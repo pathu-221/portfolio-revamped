@@ -2,22 +2,17 @@ import ProjectOverview from "@/components/ProjectOverview";
 import AnimationStopper from "@/components/animation/AnimationStopper";
 import { type FC } from "react";
 
-interface AboutPageProps {}
+interface ProjectsPageProps {}
 
-const AboutPage: FC<AboutPageProps> = () => {
+const ProjectsPage: FC<ProjectsPageProps> = () => {
 	return (
 		<>
 			<main className="main-page h-screen min-h-screen w-screen flex items-center justify-center overflow-x-hidden py-5 ">
-				<section className="text-left w-full min-h-full flex flex-col md:p-0 overflow-hidden">
-					<aside className="text-center mt-48">
-						<h1 className="text-light font-bold text-3xl">Projects</h1>
-					</aside>
-					<div className="mt-5 h-full grid grid-cols-3 gap-4 p-3 ">
-						<ProjectOverview />
-						<ProjectOverview />
-						<ProjectOverview />
-						<ProjectOverview />
-					</div>
+				<section className="flex flex-col items-center text-justify">
+					<h1 className="font-bold font-satoshi-bold text-3xl mb-4 text-primary text-left w-3/4">
+						Projects
+					</h1>
+					<div className="text-light w-[80%] flex flex-wrap gap-3"></div>
 				</section>
 				<AnimationStopper />
 			</main>
@@ -25,4 +20,4 @@ const AboutPage: FC<AboutPageProps> = () => {
 	);
 };
 
-export default AboutPage;
+export default ProjectsPage;
