@@ -7,7 +7,10 @@
     background: rgb(27, 27, 30);
     background: radial-gradient(circle, rgb(38, 38, 38) 0%, rgb(27, 27, 30) 100%);
     min-height: 100vh;
-    
+}
+
+.contact-card {
+    @apply flex items-center justify-center bg-dark-highlight flex-[.5] md:flex-[.25] aspect-square rounded 
 }
 
 .glass-effect {

@@ -7,12 +7,12 @@ interface AboutPageProps {}
 const AboutPage: FC<AboutPageProps> = () => {
 	return (
 		<main className="main-page h-screen min-h-screen flex items-center justify-center bg-gray-100">
-			<section className="flex flex-col items-center text-justify">
-				<h1 className="font-bold font-satoshi-bold text-3xl mb-4 text-primary text-left w-3/4">
+			<section className="flex flex-col items-center text-justify p-6 lg:p-0">
+				<h1 className="font-bold font-satoshi-bold text-3xl mb-4 text-primary text-left md:w-3/4">
 					About me
 				</h1>
-				<div className="text-light w-3/4 pl-8">
-					<div className="flex text-justify flex-col gap-3 mt-3 border-l-light border-l-2 pl-3">
+				<div className="text-light md:w-3/4 lg:pl-8">
+					<div className="flex text-justify flex-col gap-3 mt-3 lg:border-l-light lg:border-l-2 lg:pl-3 lg:text-sm text-xs">
 						<p>
 							But I must explain to you how all this mistaken idea of denouncing
 							pleasure and praising pain was born and I will give you a complete

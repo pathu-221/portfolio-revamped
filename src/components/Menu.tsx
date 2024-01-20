@@ -17,6 +17,7 @@ export default function Menu() {
 
 	const navRef = useSpringRef();
 	const menuItemsRef = useSpringRef();
+	const copyrightTrasitionRef = useSpringRef();
 
 	const transitions = useTransition(state.menuActive, {
 		from: { opacity: 1, transform: "translateY(-100%)", borderRadius: "20%" },
@@ -40,7 +41,20 @@ export default function Menu() {
 		trail: 100,
 	});
 
-	useChain(state.menuActive ? [navRef, menuItemsRef] : [menuItemsRef, navRef]);
+	const copyrightTrasition = useTransition(state.menuActive, {
+		from: { opacity: 0, transform: "translateX(-100%)" },
+		enter: { opacity: 1, transform: "translateX(0%)" },
+		leave: {
+			opacity: 0,
+			transform: "translateX(-100%)",
+		},
+	});
+
+	useChain(
+		state.menuActive
+			? [navRef, menuItemsRef, copyrightTrasitionRef]
+			: [menuItemsRef, navRef, copyrightTrasitionRef]
+	);
 
 	const [hoveredItem, setHoveredItem] = useState(-1);
 
@@ -52,6 +66,10 @@ export default function Menu() {
 			dispatch({
 				type: "SET_ROUTE_CHANGED",
 				payload: true,
+			});
+			dispatch({
+				type: "TOGGLE_MENU",
+				payload: false,
 			});
 		}
 		setTimeout(() => {
@@ -70,7 +88,7 @@ export default function Menu() {
 								"h-screen z-1 absolute w-screen top-0 left-0 bg-primary flex items-center justify-center gap-5"
 							}
 						>
-							<ul className="text-white flex flex-col gap-5 text-3xl uppercase font-bold font-satoshi-bold text-center">
+							<ul className="text-white flex flex-col gap-5 text-3xl uppercase text-justify font-bold font-satoshi-bold">
 								{itemTransitions(
 									(styles, item, _, index) =>
 										item && (
@@ -86,10 +104,6 @@ export default function Menu() {
 														"opacity-50"
 													}`}
 													onClick={() => {
-														dispatch({
-															type: "TOGGLE_MENU",
-															payload: false,
-														});
 														handleNavigate(item);
 													}}
 												>
@@ -99,6 +113,17 @@ export default function Menu() {
 										)
 								)}
 							</ul>
+							{copyrightTrasition(
+								(styles, value) =>
+									value && (
+										<animated.div
+											style={styles}
+											className="absolute bottom-6 left-6 text-sm"
+										>
+											© Pratham Aggarwal | 2024 All rights reserved
+										</animated.div>
+									)
+							)}
 						</animated.nav>
 					)
 			)}

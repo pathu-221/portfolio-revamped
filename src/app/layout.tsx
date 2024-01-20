@@ -5,6 +5,7 @@ import { Inter } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/Navbar";
 import PageLoader from "@/components/animation/PageLoader";
+import Links from "@/components/Links";
 
 const inter = Inter({ subsets: ["latin"] });
 
