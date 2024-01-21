@@ -1,21 +1,25 @@
-import Navbar from "@/components/Navbar";
+import AnimatedLetters from "@/components/animation/AnimatedLetters";
 import AnimationStopper from "@/components/animation/AnimationStopper";
-import type { FC } from "react";
+import { type FC } from "react";
 import { FaGithub, FaLinkedin } from "react-icons/fa6";
 import { IoMdMail } from "react-icons/io";
+import { animated, useTransition } from "@react-spring/web";
 
 interface AboutPageProps {}
 
 const AboutPage: FC<AboutPageProps> = () => {
+	const items = [<FaGithub />, <FaLinkedin />, <IoMdMail />, <FaGithub />];
+
 	return (
 		<>
 			<main className="main-page flex items-center justify-center overflow-x-hidden">
 				<section className="flex flex-col items-center text-justify w-screen pt-[-80px]">
-					<h1 className="font-bold font-satoshi-bold text-3xl mb-4 text-primary text-left w-3/4">
-						Contact Me
+					<h1 className="font-bold font-satoshi-bold text-3xl mb-4 text-primary text-left w-3/4 flex overflow-hidden">
+						<AnimatedLetters text="Contact Me" />
 					</h1>
 					<div className="w-3/4 grid md:grid-cols-4 gap-2 grid-cols-2">
 						{/* flex gap-3 rounded flex-wrap md:flex-nowrap */}
+
 						<div className="contact-card text-6xl text-light-highlight">
 							<FaGithub />
 						</div>

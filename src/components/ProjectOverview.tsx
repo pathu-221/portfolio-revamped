@@ -15,7 +15,7 @@ const ProjectOverview: FC<ProjectOverviewProps> = () => {
 				<p className="mb-3 font-normal text-xs text-light-highlight">
 					Here are the biggest enterprise technology acquisitions of
 				</p>
-				<span className="flex items-center w-full justify-between text-light-highlight text-opacity-80 text-xs">
+				<span className="flex items-center w-full justify-between  text-opacity-80 text-xs text-primary">
 					<div className="flex items-center gap-2">
 						<FaGithub />
 						<p>Source code</p>

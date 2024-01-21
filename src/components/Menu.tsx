@@ -30,6 +30,8 @@ export default function Menu() {
 		ref: navRef,
 	});
 
+	const [hoverTransition, hoverApi] = useTransition(true, () => ({}));
+
 	const items = ["Home", "About", "Projects", "Contact"];
 
 	const itemTransitions = useTransition(state.menuActive ? items : [], {
@@ -38,7 +40,7 @@ export default function Menu() {
 		leave: { opacity: 0, transform: "translateY(-20px)" },
 		config: { mass: 1, tension: 210, friction: 20 },
 		ref: menuItemsRef,
-		trail: 100,
+		trail: 75,
 	});
 
 	const copyrightTrasition = useTransition(state.menuActive, {
@@ -60,8 +62,8 @@ export default function Menu() {
 
 	const handleNavigate = (link: string) => {
 		const route = link.toLowerCase() === "home" ? "/" : link.toLowerCase();
-
-		if (pathaname != route) {
+		console.log({ route, pathaname });
+		if (pathaname !== route) {
 			setHoveredItem(-1);
 			dispatch({
 				type: "SET_ROUTE_CHANGED",
@@ -71,10 +73,10 @@ export default function Menu() {
 				type: "TOGGLE_MENU",
 				payload: false,
 			});
+			setTimeout(() => {
+				router.push(route);
+			}, 1500);
 		}
-		setTimeout(() => {
-			router.push(route);
-		}, 1500);
 	};
 
 	return (
@@ -88,21 +90,19 @@ export default function Menu() {
 								"h-screen z-1 absolute w-screen top-0 left-0 bg-primary flex items-center justify-center gap-5"
 							}
 						>
-							<ul className="text-white flex flex-col gap-5 text-3xl uppercase text-justify font-bold font-satoshi-bold">
+							<ul className="text-light flex flex-col gap-5 text-3xl uppercase text-justify font-bold font-satoshi-bold">
 								{itemTransitions(
 									(styles, item, _, index) =>
 										item && (
 											<animated.li
-												onMouseEnter={() => setHoveredItem(index)}
+												onMouseEnter={() => {
+													setHoveredItem(index);
+												}}
 												onMouseLeave={() => setHoveredItem(-1)}
 												style={styles}
 											>
 												<animated.span
-													className={`transition-all  cursor-pointer ${
-														hoveredItem !== index &&
-														hoveredItem !== -1 &&
-														"opacity-50"
-													}`}
+													className={`transition-all hover:opacity-50  cursor-pointer`}
 													onClick={() => {
 														handleNavigate(item);
 													}}
