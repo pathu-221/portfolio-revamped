@@ -1,3 +1,4 @@
+"use client";
 import ProjectOverview from "@/components/ProjectOverview";
 import AnimatedLetters from "@/components/animation/AnimatedLetters";
 import AnimationStopper from "@/components/animation/AnimationStopper";
@@ -13,7 +14,7 @@ const ProjectsPage: FC<ProjectsPageProps> = () => {
 					<h1 className="font-bold font-satoshi-bold text-3xl mb-4 text-primary text-left md:w-3/4 flex overflow-hidden">
 						<AnimatedLetters text="Projects" />
 					</h1>
-					<div className="text-light md:w-3/4 flex flex-wrap  lg:gap-4 gap-2 h-full">
+					<div className="text-light md:w-3/4 flex flex-wrap  lg:gap-4 gap-2 h-full items-center justify-center overflow-hidden">
 						<ProjectOverview />
 						<ProjectOverview />
 						<ProjectOverview />

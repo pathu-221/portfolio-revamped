@@ -1,3 +1,4 @@
+"use client";
 import AnimatedLetters from "@/components/animation/AnimatedLetters";
 import AnimationStopper from "@/components/animation/AnimationStopper";
 import { type FC } from "react";
@@ -9,7 +10,18 @@ interface AboutPageProps {}
 
 const AboutPage: FC<AboutPageProps> = () => {
 	const items = [<FaGithub />, <FaLinkedin />, <IoMdMail />, <FaGithub />];
-
+	const contactAnimation = useTransition(items, {
+		from: {
+			opacity: 0,
+			transform: "translateX(150%)",
+		},
+		enter: {
+			opacity: 1,
+			transform: "translateX(0)",
+		},
+		trail: 100,
+		delay: 750,
+	});
 	return (
 		<>
 			<main className="main-page flex items-center justify-center overflow-x-hidden">
@@ -18,10 +30,18 @@ const AboutPage: FC<AboutPageProps> = () => {
 						<AnimatedLetters text="Contact Me" />
 					</h1>
 					<div className="w-3/4 grid md:grid-cols-4 gap-2 grid-cols-2">
-						{/* flex gap-3 rounded flex-wrap md:flex-nowrap */}
-
-						<div className="contact-card text-6xl text-light-highlight">
-							<FaGithub />
+						{contactAnimation((styles, item, _, index) => (
+							<animated.div
+								className="contact-card w-full aspect-square text-6xl text-light-highlight"
+								style={styles}
+							>
+								{item}
+							</animated.div>
+						))}
+						{/* <div className="flex overflow-hidden">
+							<div className="contact-card text-6xl text-light-highlight">
+								<FaGithub />
+							</div>
 						</div>
 						<div className="contact-card text-6xl text-light-highlight">
 							<FaLinkedin />
@@ -31,7 +51,7 @@ const AboutPage: FC<AboutPageProps> = () => {
 						</div>
 						<div className="contact-card text-6xl text-light-highlight">
 							<FaGithub />
-						</div>
+						</div> */}
 					</div>
 				</section>
 				<AnimationStopper />

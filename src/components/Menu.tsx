@@ -30,26 +30,15 @@ export default function Menu() {
 		ref: navRef,
 	});
 
-	const [hoverTransition, hoverApi] = useTransition(true, () => ({}));
-
 	const items = ["Home", "About", "Projects", "Contact"];
 
 	const itemTransitions = useTransition(state.menuActive ? items : [], {
-		from: { opacity: 0, transform: "translateY(20px)" },
+		from: { opacity: 0, transform: "translateY(100%)" },
 		enter: { opacity: 1, transform: "translateY(0px)" },
-		leave: { opacity: 0, transform: "translateY(-20px)" },
+		leave: { opacity: 0, transform: "translateY(-100%)" },
 		config: { mass: 1, tension: 210, friction: 20 },
 		ref: menuItemsRef,
 		trail: 75,
-	});
-
-	const copyrightTrasition = useTransition(state.menuActive, {
-		from: { opacity: 0, transform: "translateX(-100%)" },
-		enter: { opacity: 1, transform: "translateX(0%)" },
-		leave: {
-			opacity: 0,
-			transform: "translateX(-100%)",
-		},
 	});
 
 	useChain(
@@ -62,7 +51,6 @@ export default function Menu() {
 
 	const handleNavigate = (link: string) => {
 		const route = link.toLowerCase() === "home" ? "/" : link.toLowerCase();
-		console.log({ route, pathaname });
 		if (pathaname !== route) {
 			setHoveredItem(-1);
 			dispatch({
@@ -90,40 +78,32 @@ export default function Menu() {
 								"h-screen z-1 absolute w-screen top-0 left-0 bg-primary flex items-center justify-center gap-5"
 							}
 						>
-							<ul className="text-light flex flex-col gap-5 text-3xl uppercase text-justify font-bold font-satoshi-bold">
+							<ul className="text-light flex flex-col gap-2 text-3xl tracking-wider translate-y-5 overflow-hidden uppercase  text-center font-satoshi-bold">
 								{itemTransitions(
 									(styles, item, _, index) =>
 										item && (
-											<animated.li
-												onMouseEnter={() => {
-													setHoveredItem(index);
-												}}
-												onMouseLeave={() => setHoveredItem(-1)}
-												style={styles}
-											>
-												<animated.span
-													className={`transition-all hover:opacity-50  cursor-pointer`}
-													onClick={() => {
-														handleNavigate(item);
+											<div className="flex overflow-hidden text-center pb-1">
+												<animated.li
+													onMouseEnter={() => {
+														setHoveredItem(index);
 													}}
+													onMouseLeave={() => setHoveredItem(-1)}
+													style={styles}
 												>
-													<Link href={""}>{item}</Link>
-												</animated.span>
-											</animated.li>
+													<animated.span
+														className={`transition-all group cursor-pointer relative`}
+														onClick={() => {
+															handleNavigate(item);
+														}}
+													>
+														<Link href={""}>{item}</Link>
+														<div className="  	absolute top-1/2 h-1 w-0 group-hover:w-full transition-all bg-light opacity-75"></div>
+													</animated.span>
+												</animated.li>
+											</div>
 										)
 								)}
 							</ul>
-							{copyrightTrasition(
-								(styles, value) =>
-									value && (
-										<animated.div
-											style={styles}
-											className="absolute bottom-6 left-6 text-sm"
-										>
-											© Pratham Aggarwal | 2024 All rights reserved
-										</animated.div>
-									)
-							)}
 						</animated.nav>
 					)
 			)}
