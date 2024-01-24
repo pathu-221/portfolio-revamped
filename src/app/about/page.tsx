@@ -3,24 +3,24 @@ import AnimatedLetters from "@/components/animation/AnimatedLetters";
 import AnimationStopper from "@/components/animation/AnimationStopper";
 import { type FC } from "react";
 import { animated, useTransition } from "@react-spring/web";
+import AnimatedButton from "@/components/AnimatedButton";
+import { useRouteChange } from "@/contexts/RouteChangedContext";
+import { useRouter } from "next/navigation";
 
 interface AboutPageProps {}
 
 const AboutPage: FC<AboutPageProps> = () => {
-	// const springAnimation = useTransition(null, {
-	// 	from: {
-	// 		transform: "scaleX(0)",
-	// 		transformOrigin: "right center",
-	// 		opacity: 0,
-	// 	},
-	// 	enter: { transform: "scaleX(1)", opacity: 1 },
-	// 	delay: 1000,
-	// });
-	// const springAnimation2 = useTransition(null, {
-	// 	from: { transform: "translateY(100%)", opacity: 0 },
-	// 	enter: { transform: "translateY(0)", opacity: 1 },
-	// 	delay: 1250,
-	// });
+	const router = useRouter();
+	const { dispatch } = useRouteChange();
+	const handleClick = (route: string) => {
+		dispatch({
+			type: "SET_ROUTE_CHANGED",
+			payload: true,
+		});
+		setTimeout(() => {
+			router.push(route);
+		}, 1500);
+	};
 	return (
 		<main className="main-page h-screen min-h-screen flex items-center justify-center bg-gray-100">
 			<section className="flex flex-col items-center text-justify p-6 lg:p-0">
@@ -51,6 +51,11 @@ const AboutPage: FC<AboutPageProps> = () => {
 							consequences, or one who avoids a pain that produces no resultant
 							pleasure
 						</p>
+					</div>
+					<div className="w-full flex items-center justify-center mt-3">
+						<AnimatedButton handleClick={() => handleClick("/projects")}>
+							View projects
+						</AnimatedButton>
 					</div>
 				</div>
 			</section>
