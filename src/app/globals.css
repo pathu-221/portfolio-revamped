@@ -8,8 +8,8 @@
     min-height: 100dvh;
 }
 
-.one:hover span:last-child {
-    width: 100%;
+.h-dscreen {
+    height: 100dvh;
 }
 
 .contact-card {

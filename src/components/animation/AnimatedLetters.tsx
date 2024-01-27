@@ -16,7 +16,7 @@ const AnimatedLetters: FC<AnimatedLettersProps> = ({ text }) => {
 	});
 
 	return animatedLetters((styles, item, _, index) => (
-		<animated.span className="whitespace-pre" style={styles}>
+		<animated.span key={index} className="whitespace-pre" style={styles}>
 			{letters[index]}
 		</animated.span>
 	));

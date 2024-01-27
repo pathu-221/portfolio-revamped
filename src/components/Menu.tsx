@@ -1,10 +1,12 @@
 "use client";
 import { useRouteChange } from "@/contexts/RouteChangedContext";
 import {
+	config,
 	animated,
 	useChain,
 	useSpringRef,
 	useTransition,
+	easings,
 } from "@react-spring/web";
 import Link from "next/link";
 import { usePathname, useRouter } from "next/navigation";
@@ -27,6 +29,10 @@ export default function Menu() {
 			transform: "translateY(-100%)",
 			borderRadius: "20%",
 		},
+		config: {
+			easing: easings.easeInOutSine,
+			duration: 400,
+		},
 		ref: navRef,
 	});
 
@@ -38,7 +44,7 @@ export default function Menu() {
 		leave: { opacity: 0, transform: "translateY(-100%)" },
 		config: { mass: 1, tension: 210, friction: 20 },
 		ref: menuItemsRef,
-		trail: 75,
+		trail: 100,
 	});
 
 	useChain(
@@ -75,7 +81,7 @@ export default function Menu() {
 						<animated.nav
 							style={style}
 							className={
-								"h-screen z-1 absolute w-screen top-0 left-0 bg-primary flex items-center justify-center gap-5"
+								"h-dscreen z-1 absolute w-screen top-0 left-0 bg-primary flex items-center justify-center gap-5"
 							}
 						>
 							<ul className="text-light flex flex-col gap-2 text-3xl tracking-wider translate-y-5 overflow-hidden uppercase  text-center font-satoshi-bold">

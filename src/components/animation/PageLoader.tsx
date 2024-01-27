@@ -27,7 +27,7 @@ const PageLoader: FC<PageLoaderProps> = () => {
 						<animated.nav
 							style={style}
 							className={
-								"h-screen w-screen absolute top-0 left-0 bg-dark-highlight flex items-center justify-center gap-5"
+								"h-dscreen w-screen absolute top-0 left-0 bg-dark-highlight flex items-center justify-center gap-5"
 							}
 						>
 							{/* <button

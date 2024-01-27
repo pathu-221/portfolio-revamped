@@ -22,7 +22,7 @@ const AboutPage: FC<AboutPageProps> = () => {
 		}, 1500);
 	};
 	return (
-		<main className="main-page h-screen min-h-screen flex items-center justify-center bg-gray-100">
+		<main className="main-page flex items-center justify-center bg-gray-100">
 			<section className="flex flex-col items-center text-justify p-6 lg:p-0">
 				<h1 className="font-bold font-satoshi-bold text-3xl mb-4 text-primary text-left md:w-3/4 flex overflow-hidden">
 					About me

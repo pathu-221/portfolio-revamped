@@ -21,6 +21,15 @@ const config: Config = {
 				light: "#FBFBFB",
 				"light-highlight": "#878787",
 			},
+			animation: {
+				"slide-up": "slide-up ease-out",
+			},
+			keyframes: {
+				"slide-up": {
+					"0%": { transform: "translateY(100%)" },
+					"100%": { transform: "translateY(0)" },
+				},
+			},
 		},
 	},
 	plugins: [],

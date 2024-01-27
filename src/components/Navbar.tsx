@@ -6,7 +6,7 @@ import Menu from "@/components/Menu";
 import { useRouteChange } from "@/contexts/RouteChangedContext";
 import { usePathname, useRouter } from "next/navigation";
 import { FaSun } from "react-icons/fa";
-import { Turn as Hamburger 	} from "hamburger-react";
+import { Turn as Hamburger } from "hamburger-react";
 
 interface NavbarProps {}
 
@@ -16,7 +16,7 @@ const Navbar: FC<NavbarProps> = () => {
 	const pathaname = usePathname();
 
 	return (
-		<nav className="flex absolute top-0 left-0 z-10 w-screen items-center justify-between gap-3 px-10 py-5">
+		<nav className="flex absolute top-0 left-0 z-10 w-screen items-center justify-between gap-3 px-0 md:px-10 py-5">
 			<Menu />
 
 			{/* <div className="flex items-center w-full glass-effect justify-center m-3"> */}

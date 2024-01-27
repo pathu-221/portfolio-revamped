@@ -1,14 +1,22 @@
 "use client";
-import AnimatedButton from "@/components/AnimatedButton";
 import Links from "@/components/Links";
-import AnimatedLetters from "@/components/animation/AnimatedLetters";
 import AnimationStopper from "@/components/animation/AnimationStopper";
 import { useRouteChange } from "@/contexts/RouteChangedContext";
+import dynamic from "next/dynamic";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 
+const AnimatedLetters = dynamic(
+	() => import("@/components/animation/AnimatedLetters"),
+	{ ssr: false }
+);
+
+const AnimatedButton = dynamic(() => import("@/components/AnimatedButton"), {
+	ssr: false,
+});
+
 export default function Home() {
-	const { dispatch, state } = useRouteChange();
+	const { dispatch } = useRouteChange();
 	const router = useRouter();
 	const handleClick = (route: string) => {
 		dispatch({
@@ -21,10 +29,9 @@ export default function Home() {
 	};
 	return (
 		<>
-			<main className="main-page h-screen w-screen flex items-center justify-center p-3">
+			<main className="main-page w-screen flex items-center justify-center p-3">
 				<section className="text-start text-light">
 					<div className="flex flex-col text-start gap-2 justify-start items-start font-satoshi">
-						<p className="lg:text-xl lg:text-start"></p>
 						<p className="lg:text-xl lg:text-start overflow-hidden flex">
 							<AnimatedLetters text="Hi, I am Pratham Aggarwal" />
 						</p>
@@ -35,13 +42,18 @@ export default function Home() {
 							<AnimatedLetters text="from, India" />
 						</p>
 					</div>
-					<div className="w-full flex mt-3 items-center justify-center gap-5">
-						<AnimatedButton handleClick={() => handleClick("/projects")}>
-							<Link href="/projects">View projects</Link>
-						</AnimatedButton>
-						<AnimatedButton handleClick={() => handleClick("/about")}>
-							<Link href="/about">About me </Link>
-						</AnimatedButton>
+					<div className="flex overflow-hidden w-full items-center justify-center p-3 gap-5 animate-slide-up delay-700">
+						<div className="animate-slide-up delay-700">
+							<AnimatedButton handleClick={() => handleClick("/projects")}>
+								View projects
+							</AnimatedButton>
+						</div>
+
+						<div className="animate-slide-up-1">
+							<AnimatedButton handleClick={() => handleClick("/about")}>
+								<Link href="/about">About me </Link>
+							</AnimatedButton>
+						</div>
 					</div>
 					{/* <AnimatedButton /> */}
 				</section>
