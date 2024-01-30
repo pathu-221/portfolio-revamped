@@ -1,5 +1,6 @@
 "use client";
 import HomePageButtons from "@/components/HomePageButtons";
+import Links from "@/components/Links";
 import ProjectOverview from "@/components/ProjectOverview";
 import AnimatedLetters from "@/components/animation/AnimatedLetters";
 import AnimationStopper from "@/components/animation/AnimationStopper";

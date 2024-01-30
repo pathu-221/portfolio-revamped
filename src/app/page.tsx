@@ -32,8 +32,8 @@ export default function Home() {
 					{/* <AnimatedButton /> */}
 				</section>
 				<AnimationStopper />
+				<Links />
 			</main>
-			<Links />
 		</>
 	);
 }

@@ -1,5 +1,6 @@
 "use client";
 import AnimatedButton from "@/components/AnimatedButton";
+import Links from "@/components/Links";
 import AnimatedLetters from "@/components/animation/AnimatedLetters";
 import AnimationStopper from "@/components/animation/AnimationStopper";
 import RevealFromBottom from "@/components/animation/RevealFromBottom";
@@ -25,7 +26,7 @@ const AboutPage: FC<AboutPageProps> = () => {
 	return (
 		<main className="main-page flex items-center justify-center bg-gray-100">
 			<section className="flex flex-col items-center text-justify p-6 lg:p-0">
-				<h1 className="font-bold font-satoshi-bold text-3xl mb-4 text-primary text-left md:w-3/4 flex overflow-hidden">
+				<h1 className="font-bold font-satoshi-bold text-3xl text-primary text-left md:w-3/4 flex overflow-hidden">
 					<AnimatedLetters text="About me" />
 				</h1>
 				<div className="text-light md:w-3/4 lg:pl-8 ">
@@ -64,6 +65,7 @@ const AboutPage: FC<AboutPageProps> = () => {
 				</div>
 			</section>
 			<AnimationStopper />
+			<Links />
 		</main>
 	);
 };

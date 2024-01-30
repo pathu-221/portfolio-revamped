@@ -6,7 +6,7 @@ interface LinksProps {}
 
 const Links: FC<LinksProps> = () => {
 	return (
-		<div className="absolute right-0  bottom-10 h-40 mr-5 text-light text-xl w-10 flex flex-col gap-3 justify-center items-center">
+		<div className="absolute right-0  bottom-10 w-40 mr-3 md:mr-10 text-light text-xl flex gap-3 justify-center items-center">
 			<div>
 				<FaLinkedin />
 			</div>
@@ -16,7 +16,7 @@ const Links: FC<LinksProps> = () => {
 			<div>
 				<FaEnvelope />
 			</div>
-			<div className="flex-grow bg-primary w-[10%]"></div>
+			<div className="flex-grow bg-primary h-1"></div>
 		</div>
 	);
 };
