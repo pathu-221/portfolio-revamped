@@ -32,40 +32,27 @@ const AboutPage: FC<AboutPageProps> = () => {
 					<div className="flex text-justify flex-col gap-3 mt-3 lg:border-l-light relative lg:border-l-2 lg:pl-3 lg:text-sm text-xs overflow-hidden">
 						<p className="flex flex-wrap">
 							<RevealFromBottom>
-								Nor again is there anyone who loves or pursues or desires to
-								obtain pain of itself, because it is pain, but because
-								occasionally
+								Hello there! I'm a software developer who loves to play with
+								React JS, Flutter, Nest JS, and Laravel.
 							</RevealFromBottom>
 							<RevealFromBottom>
-								circumstances occur in which toil and pain can procure him some
-								great pleasure. To take a trivial example, which of us ever
-							</RevealFromBottom>
-							<RevealFromBottom>
-								undertakes laborious physical exercise, exceptNo one rejects,
-								dislikes, or avoids pleasure itself, because it is pleasure, but
-							</RevealFromBottom>
-							<RevealFromBottom>
-								because those who do not know how to pursue pleasure rationally
-								encounter consequences that are extremely painful.
+								I create cool mobile apps with Flutter and build web
+								applications using tech like Laravel, Nest JS, and Next JS –
+								basically, I'm the digital superhero you never knew you needed.
 							</RevealFromBottom>
 						</p>
 						<p>
 							<RevealFromBottom>
-								Nor again is there anyone who loves or pursues or desires to
-								obtain pain of itself, because it is pain, but because
-								occasionally
+								When I'm not diving into code, I'm deep into anime marathons and
+								devouring interesting articles. Let's make coding fun – one bug
 							</RevealFromBottom>
 							<RevealFromBottom>
-								circumstances occur in which toil and pain can procure him some
-								great pleasure. To take a trivial example, which of us ever
+								at a time! I call India home and have a thing for learning from
+								the tech gurus. So, whether it's coding or crushing it at the
+								gym, I'm always up for an adventure.
 							</RevealFromBottom>
 							<RevealFromBottom>
-								undertakes laborious physical exercise, exceptNo one rejects,
-								dislikes, or avoids pleasure itself, because it is pleasure, but
-							</RevealFromBottom>
-							<RevealFromBottom>
-								because those who do not know how to pursue pleasure rationally
-								encounter consequences that are extremely painful.
+								Let's make coding fun – one bug at a time!
 							</RevealFromBottom>
 						</p>
 					</div>
