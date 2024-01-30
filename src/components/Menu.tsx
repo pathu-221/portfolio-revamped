@@ -19,7 +19,6 @@ export default function Menu() {
 
 	const navRef = useSpringRef();
 	const menuItemsRef = useSpringRef();
-	const copyrightTrasitionRef = useSpringRef();
 
 	const transitions = useTransition(state.menuActive, {
 		from: { opacity: 1, transform: "translateY(-100%)", borderRadius: "20%" },
@@ -31,7 +30,7 @@ export default function Menu() {
 		},
 		config: {
 			easing: easings.easeInOutSine,
-			duration: 400,
+			duration: 450,
 		},
 		ref: navRef,
 	});
@@ -47,18 +46,11 @@ export default function Menu() {
 		trail: 100,
 	});
 
-	useChain(
-		state.menuActive
-			? [navRef, menuItemsRef, copyrightTrasitionRef]
-			: [menuItemsRef, navRef, copyrightTrasitionRef]
-	);
-
-	const [hoveredItem, setHoveredItem] = useState(-1);
+	useChain(state.menuActive ? [navRef, menuItemsRef] : [menuItemsRef, navRef]);
 
 	const handleNavigate = (link: string) => {
 		const route = link.toLowerCase() === "home" ? "/" : link.toLowerCase();
 		if (pathaname !== route) {
-			setHoveredItem(-1);
 			dispatch({
 				type: "SET_ROUTE_CHANGED",
 				payload: true,
@@ -89,21 +81,15 @@ export default function Menu() {
 									(styles, item, _, index) =>
 										item && (
 											<div className="flex overflow-hidden text-center pb-1">
-												<animated.li
-													onMouseEnter={() => {
-														setHoveredItem(index);
-													}}
-													onMouseLeave={() => setHoveredItem(-1)}
-													style={styles}
-												>
+												<animated.li style={styles}>
 													<animated.span
-														className={`transition-all group cursor-pointer relative`}
+														className={`transition-all cursor-pointer group relative `}
 														onClick={() => {
 															handleNavigate(item);
 														}}
 													>
-														<Link href={""}>{item}</Link>
-														<div className="  	absolute top-1/2 h-1 w-0 group-hover:w-full transition-all bg-light opacity-75"></div>
+														{item}
+														<div className="  	absolute top-1/2 h-1 w-0 group-hover:w-full transition-all bg-light"></div>
 													</animated.span>
 												</animated.li>
 											</div>

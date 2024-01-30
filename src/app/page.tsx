@@ -1,32 +1,18 @@
 "use client";
 import Links from "@/components/Links";
 import AnimationStopper from "@/components/animation/AnimationStopper";
-import { useRouteChange } from "@/contexts/RouteChangedContext";
 import dynamic from "next/dynamic";
-import Link from "next/link";
-import { useRouter } from "next/navigation";
-
+import HomePageButtons from "@/components/HomePageButtons";
 const AnimatedLetters = dynamic(
 	() => import("@/components/animation/AnimatedLetters"),
 	{ ssr: false }
 );
 
-const AnimatedButton = dynamic(() => import("@/components/AnimatedButton"), {
-	ssr: false,
-});
+// const HomePageButtons = dynamic(() => import("@/components/HomePageButtons"), {
+// 	ssr: false,
+// });
 
 export default function Home() {
-	const { dispatch } = useRouteChange();
-	const router = useRouter();
-	const handleClick = (route: string) => {
-		dispatch({
-			type: "SET_ROUTE_CHANGED",
-			payload: true,
-		});
-		setTimeout(() => {
-			router.push(route);
-		}, 1500);
-	};
 	return (
 		<>
 			<main className="main-page w-screen flex items-center justify-center p-3">
@@ -42,19 +28,7 @@ export default function Home() {
 							<AnimatedLetters text="from, India" />
 						</p>
 					</div>
-					<div className="flex overflow-hidden w-full items-center justify-center p-3 gap-5 animate-slide-up delay-700">
-						<div className="animate-slide-up delay-700">
-							<AnimatedButton handleClick={() => handleClick("/projects")}>
-								View projects
-							</AnimatedButton>
-						</div>
-
-						<div className="animate-slide-up-1">
-							<AnimatedButton handleClick={() => handleClick("/about")}>
-								<Link href="/about">About me </Link>
-							</AnimatedButton>
-						</div>
-					</div>
+					<HomePageButtons />
 					{/* <AnimatedButton /> */}
 				</section>
 				<AnimationStopper />
