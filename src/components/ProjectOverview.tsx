@@ -27,7 +27,7 @@ const ProjectOverview: FC<ProjectOverviewProps> = () => {
 			style={style}
 			className="w-4/5 bg-dark-highlight rounded-lg overflow-hidden shadow-2xl cursor-pointer lg:w-[30%] md:w-[50%] flex-grow"
 		>
-			<img src="https://images.unsplash.com/photo-1682687218904-de46ed992b58?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDF8MHxlZGl0b3JpYWwtZmVlZHw2fHx8ZW58MHx8fHx8" />
+			<img src="/images/grocery.png" />
 			<div className="p-3">
 				<h5 className="text-base mb-2 font-bold text-light">Lorem ipsum</h5>
 				{/* <p className="mb-3 font-normal text-xs text-light-highlight">
