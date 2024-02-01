@@ -25,7 +25,7 @@ const AboutPage: FC<AboutPageProps> = () => {
 
 	return (
 		<main className="main-page flex items-center justify-center bg-gray-100">
-			<section className="flex flex-col items-center text-justify p-6 lg:p-0">
+			<section className="flex flex-col items-center text-justify p-4 lg:p-0">
 				<h1 className="font-bold font-satoshi-bold text-3xl text-primary text-left md:w-3/4 flex overflow-hidden">
 					<AnimatedLetters text="About me" />
 				</h1>
@@ -58,9 +58,11 @@ const AboutPage: FC<AboutPageProps> = () => {
 						</p>
 					</div>
 					<div className="w-full flex items-center justify-center mt-3">
-						<AnimatedButton handleClick={() => handleClick("/projects")}>
-							View projects
-						</AnimatedButton>
+						<RevealFromBottom>
+							<AnimatedButton handleClick={() => handleClick("/projects")}>
+								View projects
+							</AnimatedButton>
+						</RevealFromBottom>
 					</div>
 				</div>
 			</section>

@@ -66,7 +66,7 @@ export default function Menu() {
 	};
 
 	return (
-		<div className="text-light ">
+		<div className="text-light absolute top-0 left-0">
 			{transitions(
 				(style, value) =>
 					value && (

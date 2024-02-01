@@ -16,13 +16,7 @@ const Navbar: FC<NavbarProps> = () => {
 	const pathaname = usePathname();
 
 	return (
-		<nav className="flex absolute top-0 left-0 z-10 w-screen items-center justify-between gap-3 px-0 md:px-10 py-5">
-			<Menu />
-
-			{/* <div className="flex items-center w-full glass-effect justify-center m-3"> */}
-			{/* <div>
-				<FaSun className="text-light cursor-pointer" size={"1.5em"} />
-			</div> */}
+		<nav className="flex absolute top-0 left-0 z-10 w-screen items-center justify-between gap-3 px-4 md:px-10 py-5">
 			<div className="w-full flex items-center justify-between">
 				<Link
 					href={""}
@@ -38,7 +32,7 @@ const Navbar: FC<NavbarProps> = () => {
 						}
 					}}
 				>
-					<GoHomeFill className="text-light cursor-pointer" size={"1.5em"} />
+					<GoHomeFill className="text-light cursor-pointer text-3xl" />
 				</Link>
 				<div className="text-light z-50">
 					<Hamburger
@@ -51,7 +45,7 @@ const Navbar: FC<NavbarProps> = () => {
 					/>
 				</div>
 			</div>
-			{/* </div> */}
+			<Menu />
 		</nav>
 	);
 };

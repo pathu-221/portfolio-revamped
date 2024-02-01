@@ -8,7 +8,6 @@ interface PageLoaderProps {}
 
 const PageLoader: FC<PageLoaderProps> = () => {
 	const { state } = useRouteChange();
-	// const [state, setState] = useState({ isRouteChanged: true });
 	const transitions = useTransition(state.isRouteChanged, {
 		from: { opacity: 1, transform: "translateY(-100%)", borderRadius: "50%" },
 		enter: { opacity: 1, transform: "translateY(0%)", borderRadius: "0%" },
@@ -27,17 +26,10 @@ const PageLoader: FC<PageLoaderProps> = () => {
 						<animated.nav
 							style={style}
 							className={
-								"h-dscreen w-screen absolute top-0 left-0 bg-dark-highlight flex items-center justify-center gap-5"
+								"h-dscreen w-screen absolute top-0 left-0 bg-dark-highlight flex items-center justify-center gap-5 text-light"
 							}
 						>
-							{/* <button
-								onClick={() =>
-									setState({ isRouteChanged: !state.isRouteChanged })
-								}
-							>
-								click
-							</button> */}
-							<h1 className="text-3xl font-bold">Loading...</h1>
+							<div className="bg-dark-shade-2 loader"></div>
 						</animated.nav>
 					)
 			)}

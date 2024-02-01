@@ -5,6 +5,7 @@ import { type FC } from "react";
 import { FaGithub, FaLinkedin } from "react-icons/fa6";
 import { IoMdMail } from "react-icons/io";
 import { animated, useTransition } from "@react-spring/web";
+import InteractiveScaleAnimation from "@/components/animation/InteractiveScaleAnimation";
 
 interface AboutPageProps {}
 
@@ -25,33 +26,22 @@ const AboutPage: FC<AboutPageProps> = () => {
 	return (
 		<>
 			<main className="main-page flex items-center justify-center overflow-x-hidden">
-				<section className="flex flex-col items-center text-justify w-screen pt-[-80px]">
-					<h1 className="font-bold font-satoshi-bold text-3xl mb-4 text-primary text-left w-3/4 flex overflow-hidden">
+				<section className="flex flex-col items-center text-justify w-screen pt-[-80px] p-4">
+					<h1 className="font-bold font-satoshi-bold text-3xl mb-4 text-primary text-left md:w-3/4 flex overflow-hidden">
 						<AnimatedLetters text="Contact Me" />
 					</h1>
-					<div className="w-3/4 grid md:grid-cols-4 gap-2 grid-cols-2">
+					<div className="md:w-3/4 w-full grid md:grid-cols-4 gap-4 grid-cols-2">
 						{contactAnimation((styles, item, _, index) => (
-							<animated.div
-								className="contact-card w-full aspect-square text-6xl text-light-highlight"
-								style={styles}
-							>
-								{item}
-							</animated.div>
+							<InteractiveScaleAnimation scaleUp={1.07}>
+								<animated.a
+									className="contact-card w-full aspect-square text-6xl text-light-highlight"
+									style={styles}
+									href={""}
+								>
+									{item}
+								</animated.a>
+							</InteractiveScaleAnimation>
 						))}
-						{/* <div className="flex overflow-hidden">
-							<div className="contact-card text-6xl text-light-highlight">
-								<FaGithub />
-							</div>
-						</div>
-						<div className="contact-card text-6xl text-light-highlight">
-							<FaLinkedin />
-						</div>
-						<div className="contact-card text-6xl text-light-highlight">
-							<IoMdMail />
-						</div>
-						<div className="contact-card text-6xl text-light-highlight">
-							<FaGithub />
-						</div> */}
 					</div>
 				</section>
 				<AnimationStopper />
