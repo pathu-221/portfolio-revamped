@@ -76,7 +76,7 @@ export default function Menu() {
 								"h-dscreen z-1 absolute w-screen top-0 left-0 bg-primary flex items-center justify-center gap-5"
 							}
 						>
-							<ul className="text-light flex flex-col gap-2 text-3xl tracking-wider translate-y-5 overflow-hidden uppercase  text-center font-satoshi-bold">
+							<ul className="text-light flex flex-col gap-2 text-3xl items-center justify-items-center tracking-wide translate-y-5 overflow-hidden uppercase  text-center font-satoshi-bold">
 								{itemTransitions(
 									(styles, item, _, index) =>
 										item && (

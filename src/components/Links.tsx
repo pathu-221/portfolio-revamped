@@ -12,17 +12,20 @@ const Links: FC<LinksProps> = () => {
 	return (
 		<div className="absolute right-0  bottom-10 w-40 mr-3 md:mr-10 text-light text-xl flex gap-3 justify-center items-center">
 			<InteractiveScaleAnimation>
-				<a href="" target="_blank">
+				<a
+					href="https://www.linkedin.com/in/pratham-aggarwal-48516b120/"
+					target="_blank"
+				>
 					<FaLinkedin />
 				</a>
 			</InteractiveScaleAnimation>
 			<InteractiveScaleAnimation>
-				<a href="" target="_blank">
+				<a href="https://github.com/pathu-221" target="_blank">
 					<FaGithub />
 				</a>
 			</InteractiveScaleAnimation>
 			<InteractiveScaleAnimation>
-				<a href="" target="_blank">
+				<a href="mailto:prathamaggarwal235@gmail.com" target="_blank">
 					<FaEnvelope />
 				</a>
 			</InteractiveScaleAnimation>

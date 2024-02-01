@@ -10,7 +10,28 @@ import InteractiveScaleAnimation from "@/components/animation/InteractiveScaleAn
 interface AboutPageProps {}
 
 const AboutPage: FC<AboutPageProps> = () => {
-	const items = [<FaGithub />, <FaLinkedin />, <IoMdMail />, <FaGithub />];
+	const items = [
+		{
+			link: "https://github.com/pathu-221",
+			title: "Github",
+			element: <FaGithub />,
+		},
+		{
+			link: "https://www.linkedin.com/in/pratham-aggarwal-48516b120/",
+			title: "LinkedIn",
+			element: <FaLinkedin />,
+		},
+		{
+			link: "mailto:prathamaggarwal235@gmail.com",
+			title: "E-Mail",
+			element: <IoMdMail />,
+		},
+		{
+			link: "",
+			title: "Github",
+			element: <FaGithub />,
+		},
+	];
 	const contactAnimation = useTransition(items, {
 		from: {
 			opacity: 0,
@@ -34,11 +55,13 @@ const AboutPage: FC<AboutPageProps> = () => {
 						{contactAnimation((styles, item, _, index) => (
 							<InteractiveScaleAnimation scaleUp={1.07}>
 								<animated.a
-									className="contact-card w-full aspect-square text-6xl text-light-highlight"
+									className="contact-card flex flex-col w-full aspect-square text-6xl text-light-highlight"
 									style={styles}
-									href={""}
+									href={item.link}
+									target="_blank"
 								>
-									{item}
+									{item.element}
+									{/* <p className="text-lg mt-2">{item.title}</p> */}
 								</animated.a>
 							</InteractiveScaleAnimation>
 						))}
