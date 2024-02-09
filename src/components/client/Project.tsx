@@ -3,11 +3,11 @@ import { useState, type FC } from "react";
 import AnimatedLetters from "../animation/AnimatedLetters";
 import ProjectOverview from "../ProjectOverview";
 import AnimationStopper from "../animation/AnimationStopper";
+import { projectsData } from "@/data/projects-data";
 
 interface ProjectPageProps {}
 
 const ProjectPage: FC<ProjectPageProps> = () => {
-	const [showModal, setShowModal] = useState(false);
 	return (
 		<main className="main-page flex items-center justify-center overflow-x-hidden pt-20">
 			<section className="flex flex-col items-center text-justify w-screen pt-[-80px] p-4">
@@ -15,9 +15,9 @@ const ProjectPage: FC<ProjectPageProps> = () => {
 					<AnimatedLetters text="Projects" />
 				</h1>
 				<div className="text-light md:w-3/4 flex flex-wrap  lg:gap-4 gap-5 h-full items-center justify-center overflow-hidden">
-					<ProjectOverview onClick={() => setShowModal(true)} />
-					<ProjectOverview onClick={() => setShowModal(true)} />
-					<ProjectOverview onClick={() => setShowModal(true)} />
+					{projectsData.map((item) => (
+						<ProjectOverview item={item} />
+					))}
 				</div>
 			</section>
 

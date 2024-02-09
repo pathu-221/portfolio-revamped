@@ -1,4 +1,4 @@
-'use client';
+"use client";
 import { type FC } from "react";
 import AnimatedButton from "@/components/AnimatedButton";
 import Links from "@/components/Links";

@@ -9,10 +9,16 @@ import {
 } from "@react-spring/web";
 
 interface ProjectOverviewProps {
-	onClick: Function;
+	item: {
+		title: string;
+		image: string;
+		live: string;
+		github: string;
+		description?: string;
+	};
 }
 
-const ProjectOverview: FC<ProjectOverviewProps> = ({ onClick }) => {
+const ProjectOverview: FC<ProjectOverviewProps> = ({ item }) => {
 	const [style, api] = useSpring(() => {
 		return {
 			from: {
@@ -32,28 +38,30 @@ const ProjectOverview: FC<ProjectOverviewProps> = ({ onClick }) => {
 	}, []);
 	return (
 		<animated.div
-			onClick={() => {
-				onClick();
-			}}
 			style={style}
 			className="w-4/5 border-b border-b-primary rounded-t-lg overflow-hidden shadow-2xl lg:w-[30%] md:w-[50%] flex-grow lg:rounded-lg lg:bg-dark-highlight lg:border-none"
 		>
-			<img src="/images/grocery.png" className="rounded-t-lg" />
+			<img src={item.image} className="rounded-t-lg" />
 			<div className="p-3 flex flex-col gap-2">
-				<h5 className="text-base font-bold text-light -mb-1">Lorem ipsum</h5>
-				<p className="text-xs text-light-highlight">
-					It is a long established fact that a reader will be distracted by the
-					readable content of
-				</p>
+				<h5 className="text-base font-bold text-light -mb-1">{item.title}</h5>
+				<p className="text-xs text-light-highlight">{item.description || ""}</p>
 				<span className="flex items-center w-full justify-between  text-opacity-80 text-xs text-primary">
-					<div className="flex items-center gap-2">
+					<a
+						target="_blank"
+						href={item.github}
+						className="flex items-center gap-2"
+					>
 						<FaGithub />
-						<p>Source code</p>
-					</div>
-					<div className="flex items-center gap-2">
+						<p>Github</p>
+					</a>
+					<a
+						target="_blank"
+						href={item.live}
+						className="flex items-center gap-2"
+					>
 						<FiExternalLink />
 						<p>Live</p>
-					</div>
+					</a>
 				</span>
 			</div>
 		</animated.div>
