@@ -6,6 +6,7 @@ import { FaGithub, FaLinkedin } from "react-icons/fa6";
 import { IoMdMail } from "react-icons/io";
 import { animated, useTransition } from "@react-spring/web";
 import InteractiveScaleAnimation from "@/components/animation/InteractiveScaleAnimation";
+import { HiMiniDocumentText } from "react-icons/hi2";
 
 interface AboutPageProps {}
 
@@ -23,13 +24,13 @@ const AboutPage: FC<AboutPageProps> = () => {
 		},
 		{
 			link: "mailto:prathamaggarwal235@gmail.com",
-			title: "E-Mail",
+			title: "E Mail",
 			element: <IoMdMail />,
 		},
 		{
 			link: "",
-			title: "Github",
-			element: <FaGithub />,
+			title: "Resume",
+			element: <HiMiniDocumentText />,
 		},
 	];
 	const contactAnimation = useTransition(items, {
@@ -61,7 +62,7 @@ const AboutPage: FC<AboutPageProps> = () => {
 									target="_blank"
 								>
 									{item.element}
-									{/* <p className="text-lg mt-2">{item.title}</p> */}
+									<p className="text-base mt-2">{item.title}</p>
 								</animated.a>
 							</InteractiveScaleAnimation>
 						))}

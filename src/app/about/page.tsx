@@ -57,7 +57,7 @@ const AboutPage: FC<AboutPageProps> = () => {
 							</RevealFromBottom>
 						</p>
 					</div>
-					<div className="w-full flex items-center justify-center mt-3">
+					<div className="w-full flex items-center justify-center mt-3 p-3">
 						<RevealFromBottom>
 							<AnimatedButton handleClick={() => handleClick("/projects")}>
 								View projects

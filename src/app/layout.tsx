@@ -1,10 +1,17 @@
 "use client";
-import Navbar from "@/components/Navbar";
-import PageLoader from "@/components/animation/PageLoader";
+// import Navbar from "@/components/Navbar";
+// import PageLoader from "@/components/animation/PageLoader";
 import { RouteChangeProvider } from "@/contexts/RouteChangedContext";
 import { Inter } from "next/font/google";
 import "./globals.css";
+import dynamic from "next/dynamic";
 
+const Navbar = dynamic(() => import("@/components/Navbar"), {
+	ssr: false,
+});
+const PageLoader = dynamic(() => import("@/components/animation/PageLoader"), {
+	ssr: false,
+});
 const inter = Inter({ subsets: ["latin"] });
 
 // export const metadata: Metadata = {
