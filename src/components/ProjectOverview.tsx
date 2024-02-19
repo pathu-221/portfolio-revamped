@@ -39,7 +39,7 @@ const ProjectOverview: FC<ProjectOverviewProps> = ({ item }) => {
 	return (
 		<animated.div
 			style={style}
-			className="w-4/5 border-b border-b-primary rounded-t-lg overflow-hidden shadow-2xl lg:w-[30%] md:w-[50%] flex-grow lg:rounded-lg lg:bg-dark-highlight lg:border-none"
+			className="w-4/5 border-b border-b-primary rounded-t-lg overflow-hidden lg:min-w-[30%] md:w-[50%] flex-grow lg:rounded-lg lg:bg-dark-highlight lg:border-none"
 		>
 			<img src={item.image} className="rounded-t-lg" />
 			<div className="p-3 flex flex-col gap-2">

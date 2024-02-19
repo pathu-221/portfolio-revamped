@@ -23,4 +23,20 @@ export const projectsData = [
 		live: "",
 		github: "",
 	},
+	// {
+	// 	title: "Social media website",
+	// 	image: "/images/socially unique.png",
+	// 	description:
+	// 		"A social media website, where users can create threads and interact with them",
+	// 	live: "",
+	// 	github: "",
+	// },
+	// {
+	// 	title: "Social media website",
+	// 	image: "/images/socially unique.png",
+	// 	description:
+	// 		"A social media website, where users can create threads and interact with them",
+	// 	live: "",
+	// 	github: "",
+	// },
 ];
