@@ -18,7 +18,9 @@ const RevealFromBottom: FC<RevealFromBottomProps> = ({
 	return (
 		<span className={`${classNames ? classNames : ""} flex overflow-hidden`}>
 			{animation((styles, item) => (
-				<animated.span style={styles}>{children}</animated.span>
+				<animated.span className="whitespace-pre" style={styles}>
+					{children}
+				</animated.span>
 			))}
 		</span>
 	);
