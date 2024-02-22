@@ -3,10 +3,11 @@ FROM node:18
 
 WORKDIR /usr/src/app
 
-COPY package*.json ./
-RUN npm install --verbose
 
 COPY . .
+COPY package*.json ./
+
+RUN npm ci
 
 RUN npm run build
 EXPOSE 3000
