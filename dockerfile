@@ -7,7 +7,8 @@ WORKDIR /usr/src/app
 COPY . .
 COPY package*.json ./
 
-RUN npm ci
+RUN npm cache clean --force
+RUN npm ci --unsafe-perm
 
 RUN npm run build
 EXPOSE 3000
