@@ -8,7 +8,7 @@ COPY . .
 COPY package*.json ./
 
 RUN npm cache clean --force
-RUN npm ci --unsafe-perm
+RUN npm install --verbose
 
 RUN npm run build
 EXPOSE 3000
