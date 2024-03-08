@@ -14,7 +14,7 @@ const ProjectPage: FC<ProjectPageProps> = () => {
 				<h1 className="font-bold font-satoshi-bold text-3xl mb-4 text-primary text-left md:w-3/4 flex overflow-hidden">
 					<AnimatedLetters text="Projects" />
 				</h1>
-				<div className="text-light flex-wrap md:flex-nowrap scrollbar-thumb-primary md:w-3/4 flex lg:gap-4 gap-5 h-full items-center justify-start pb-3 overflow-y-scroll md:overflow-y-hidden md:overflow-x-scroll scrollbar-thumb-rounded-full scrollbar-thin">
+				<div className="text-light flex-wrap md:flex-nowrap md:w-3/4 flex lg:gap-4 gap-5 h-full items-center justify-start pb-3 overflow-y-scroll md:overflow-y-hidden md:overflow-x-scroll ">
 					{projectsData.map((item) => (
 						<ProjectOverview item={item} />
 					))}

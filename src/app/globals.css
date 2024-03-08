@@ -53,3 +53,13 @@
         left: unset;
     }
 }
+
+::-webkit-scrollbar {
+    box-sizing: border-box;
+    height: .5em;
+}
+::-webkit-scrollbar-thumb {
+    background-color: #F56E0F !important;
+    height: 4px;
+    border-radius: 1em;
+}
