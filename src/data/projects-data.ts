@@ -1,3 +1,11 @@
+export interface Project {
+	title: string;
+	image: string;
+	description: string;
+	live: string;
+	github: string;
+}
+
 export const projectsData = [
 	{
 		title: "Grocery Store",

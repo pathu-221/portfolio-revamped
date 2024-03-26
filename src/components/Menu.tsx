@@ -50,7 +50,8 @@ export default function Menu() {
 
 	const handleNavigate = (link: string) => {
 		const route = link.toLowerCase() === "home" ? "/" : link.toLowerCase();
-		if (pathaname !== route) {
+		console.log({ route, pathaname });
+		if (pathaname !== `/${route}`) {
 			dispatch({
 				type: "SET_ROUTE_CHANGED",
 				payload: true,

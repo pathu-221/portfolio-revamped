@@ -56,10 +56,10 @@
 
 ::-webkit-scrollbar {
     box-sizing: border-box;
-    height: .5em;
+    height: .3em;
 }
 ::-webkit-scrollbar-thumb {
     background-color: #F56E0F !important;
-    height: 4px;
+    height: 1px;
     border-radius: 1em;
 }

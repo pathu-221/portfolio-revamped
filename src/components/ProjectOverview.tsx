@@ -8,18 +8,15 @@ import {
 	useIsomorphicLayoutEffect,
 } from "@react-spring/web";
 import Carousel from "./Carousel";
+import { Project } from "@/data/projects-data";
+import AnimatedButton from "./AnimatedButton";
 
 interface ProjectOverviewProps {
-	item: {
-		title: string;
-		image: string;
-		live: string;
-		github: string;
-		description?: string;
-	};
+	item: Project;
+	onClick: Function;
 }
 
-const ProjectOverview: FC<ProjectOverviewProps> = ({ item }) => {
+const ProjectOverview: FC<ProjectOverviewProps> = ({ item, onClick }) => {
 	const images = [item.image, item.image, item.image, item.image, item.image];
 
 	const [style, api] = useSpring(() => {
@@ -46,9 +43,17 @@ const ProjectOverview: FC<ProjectOverviewProps> = ({ item }) => {
 		>
 			<Carousel images={images} />
 			<div className="p-3 flex flex-col gap-2">
-				<h5 className="text-base font-bold text-light -mb-1">{item.title}</h5>
-				<p className="text-xs text-light-highlight">{item.description || ""}</p>
-				<span className="flex items-center w-full justify-between  text-opacity-80 text-xs text-primary">
+				<div className="w-full flex items-center justify-between">
+					<h5 className="text-base font-bold text-light -mb-1">{item.title}</h5>
+					<span
+						onClick={() => onClick()}
+						className="flex items-center gap-2 text-xs hover:text-primary cursor-pointer"
+					>
+						View more <FaAngleRight />
+					</span>
+				</div>
+				{/* <p className="text-xs text-light-highlight">{item.description || ""}</p> */}
+				{/* <span className="flex items-center w-full justify-between  text-opacity-80 text-xs text-primary">
 					<a
 						target="_blank"
 						href={item.github}
@@ -65,7 +70,7 @@ const ProjectOverview: FC<ProjectOverviewProps> = ({ item }) => {
 						<FiExternalLink />
 						<p>Live</p>
 					</a>
-				</span>
+				</span> */}
 			</div>
 		</animated.div>
 	);
