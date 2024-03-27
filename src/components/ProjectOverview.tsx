@@ -43,11 +43,13 @@ const ProjectOverview: FC<ProjectOverviewProps> = ({ item, onClick }) => {
 		>
 			<Carousel images={images} />
 			<div className="p-3 flex flex-col gap-2">
-				<div className="w-full flex items-center justify-between">
-					<h5 className="text-base font-bold text-light -mb-1">{item.title}</h5>
+				<div className="w-full flex items-center md:items-start lg:items-center justify-between flex-col lg:flex-row gap-2">
+					<h5 className="text-base font-satoshi-bold text-light flex-[.5] flex-grow">
+						{item.title}
+					</h5>
 					<span
 						onClick={() => onClick()}
-						className="flex items-center gap-2 text-xs hover:text-primary cursor-pointer"
+						className="flex flex-[.5] items-center gap-1 text-xs text-primary hover:text-light cursor-pointer"
 					>
 						View more <FaAngleRight />
 					</span>
