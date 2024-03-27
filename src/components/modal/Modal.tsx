@@ -55,9 +55,9 @@ const Modal: FC<ModalProps> = ({ onClick, visible = false, project }) => {
 									e.stopPropagation();
 								}}
 								style={style}
-								className="w-full md:max-w-3/4  aspect-video rounded-xl bg-black  z-50 text-light flex flex-col gap-1 md:gap-3 p-5"
+								className="w-full md:w-3/4  aspect-video rounded-xl bg-black  z-50 text-light flex flex-col gap-1 md:gap-3 p-5"
 							>
-								<animated.div className="w-full flex items-center justify-between border-b border-primary pb-2 border-opacity-50">
+								<animated.div className="w-full flex items-center justify-between border-b border-primary pb-1 border-opacity-50">
 									<h1 className="text-2xl">{project?.title}</h1>
 									<button
 										onClick={() => onClick()}

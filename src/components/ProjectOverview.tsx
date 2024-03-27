@@ -49,7 +49,7 @@ const ProjectOverview: FC<ProjectOverviewProps> = ({ item, onClick }) => {
 					</h5>
 					<span
 						onClick={() => onClick()}
-						className="flex flex-[.5] items-center gap-1 text-xs text-primary hover:text-light cursor-pointer"
+						className="flex items-center gap-1 text-xs text-primary hover:text-light cursor-pointer"
 					>
 						View more <FaAngleRight />
 					</span>
