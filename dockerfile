@@ -7,10 +7,11 @@ WORKDIR /usr/src/app
 COPY . .
 COPY package*.json ./
 
-RUN npm cache clean --force
-RUN npm install --verbose
-
+RUN rm -r node_modules
+RUN npm install
+RUN rm -r .next
 RUN npm run build
+
 EXPOSE 3000
 
 CMD ["npm", "start"]
