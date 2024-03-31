@@ -17,8 +17,6 @@ interface ProjectOverviewProps {
 }
 
 const ProjectOverview: FC<ProjectOverviewProps> = ({ item, onClick }) => {
-	const images = [item.image, item.image, item.image, item.image, item.image];
-
 	const [style, api] = useSpring(() => {
 		return {
 			from: {
@@ -39,9 +37,9 @@ const ProjectOverview: FC<ProjectOverviewProps> = ({ item, onClick }) => {
 	return (
 		<animated.div
 			style={style}
-			className="w-4/5 border-b border-b-primary rounded-t-lg overflow-hidden lg:min-w-[49%] md:w-[50%] flex-grow lg:rounded-lg lg:bg-dark-highlight lg:border-none"
+			className="w-4/5  border-b border-b-primary rounded-t-lg overflow-hidden lg:min-w-[49%] lg:max-w-[49%] md:w-[50%] flex-grow lg:rounded-lg lg:bg-dark-highlight lg:border-none"
 		>
-			<Carousel images={images} />
+			<Carousel images={item.images} />
 			<div className="p-3 flex flex-col gap-2">
 				<div className="w-full flex items-center md:items-start lg:items-center justify-between flex-col lg:flex-row gap-2">
 					<h5 className="text-base font-satoshi-bold text-light flex-[.5] flex-grow">
