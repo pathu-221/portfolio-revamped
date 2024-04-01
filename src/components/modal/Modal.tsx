@@ -49,7 +49,7 @@ const Modal: FC<ModalProps> = ({ onClick, visible = false, project }) => {
 								className="w-full md:w-3/4  aspect-video rounded-xl bg-black  z-50 text-light flex flex-col gap-1 md:gap-3 p-5"
 							>
 								<animated.div className="w-full flex items-center justify-between border-b border-primary pb-1 border-opacity-50">
-									<h1 className="text-2xl">{project?.title}</h1>
+									<h1 className="text-lg md:text-2xl">{project?.title}</h1>
 									<button
 										onClick={() => onClick()}
 										className="text-3xl hover:text-primary"
@@ -87,7 +87,7 @@ const Modal: FC<ModalProps> = ({ onClick, visible = false, project }) => {
 										)}
 									</div>
 								</animated.div>
-								<animated.p className="w-full text-xs opacity-70">
+								<animated.p className="w-full text-xs opacity-70 text-justify">
 									{project?.description}
 								</animated.p>
 							</animated.div>

@@ -22,7 +22,7 @@ export const projectsData: Project[] = [
 			"images/thomas/thomas 5.png",
 		],
 		description:
-			"Mobile app built with flutter and backend with nest js, where users can add different type of receips/bills and get the generated pdf in their email",
+			"Flutter app designed for seamless receipt management. Users can effortlessly upload and customize receipts, generating dynamic PDFs with personalized signatures, logos, and recipient details. With streamlined email delivery and features like address updates and multi-recipient support.",
 		live: "",
 		github: "https://github.com/pathu-221/thomas-flutter-app.git",
 		techStack: (
