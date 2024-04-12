@@ -16,7 +16,11 @@ const RevealFromBottom: FC<RevealFromBottomProps> = ({
 		delay: 1000,
 	});
 	return (
-		<span className={`${classNames ? classNames : ""} flex overflow-hidden`}>
+		<span
+			className={`${
+				classNames ? classNames : ""
+			} flex overflow-hidden flex-wrap break-words`}
+		>
 			{animation((styles, item) => (
 				<animated.span className="whitespace-pre" style={styles}>
 					{children}

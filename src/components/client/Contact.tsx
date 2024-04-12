@@ -27,7 +27,7 @@ const ContactPage: FC<ContactPageProps> = () => {
 			element: <IoMdMail />,
 		},
 		{
-			link: "",
+			link: "https://drive.google.com/file/d/1vTFJwTsYTOUUgYPHWxv_c4_x5m3og25d/view?usp=sharing",
 			title: "Resume",
 			element: <HiMiniDocumentText />,
 		},

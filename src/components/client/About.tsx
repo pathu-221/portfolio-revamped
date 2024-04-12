@@ -11,13 +11,18 @@ interface AboutPageProps {}
 
 const AboutPage: FC<AboutPageProps> = () => {
 	const paragraph1Words =
-		"Hello there! I'm a software developer who loves to play with React JS, Flutter, Nest JS, and Laravel. I create cool mobile apps with Flutter and build web applications using tech like Laravel, Nest JS, and Next JS – basically, I'm the digital superhero you never knew you needed.".split(
+		"Hey there! I'm a software developer based in India. I love tinkering with React JS, Flutter, Nest JS, and Laravel to create cool stuff. With Flutter, I build mobile apps, and for web applications, I turn to Laravel, Nest JS, and Next JS. Think of me as your friendly neighborhood coder, here to tackle bugs and make coding a fun adventure!".split(
 			" "
 		);
 	const paragraph2Words =
-		"When I'm not diving into code, I'm deep into anime marathons and devouring interesting articles. Let's make coding fun – one bug at a time! I call India home and have a thing for learning from the tech gurus. So, whether it's coding or crushing it at the gym, I'm always up for an adventure.".split(
+		'When I\'m not glued to my screen, you can catch me binging anime or getting lost in a good book. "1984" is my top pick; dystopian tales just suck me in.'.split(
 			" "
 		);
+	const paragraph3Words =
+		"So, if you're down to chat about coding or swap book recommendations, hit me up! Let's make some magic – whether it's code or on the page.".split(
+			" "
+		);
+
 	const router = useRouter();
 	const { dispatch } = useRouteChange();
 	const handleClick = (route: string) => {
@@ -36,8 +41,8 @@ const AboutPage: FC<AboutPageProps> = () => {
 				<h1 className="font-bold font-satoshi-bold text-3xl text-primary text-left md:w-3/4 flex overflow-hidden">
 					<AnimatedLetters text="About me" />
 				</h1>
-				<div className="text-light md:w-3/4 lg:pl-8 ">
-					<div className="flex text-justify flex-col gap-3 mt-3 lg:border-l-light relative lg:border-l-2 lg:pl-3 lg:text-sm text-xs w-full overflow-hidden max-w-full">
+				<div className="text-light w-full md:w-3/4 lg:pl-8 ">
+					<div className="flex text-justify flex-col gap-3 mt-3 lg:border-l-light lg:border-l-2 lg:pl-3 lg:text-sm text-xs w-full overflow-hidden max-w-full">
 						<p className="flex flex-wrap text-justify">
 							{paragraph1Words.map((word) => (
 								<RevealFromBottom>{`${word} `}</RevealFromBottom>
@@ -48,10 +53,10 @@ const AboutPage: FC<AboutPageProps> = () => {
 								<RevealFromBottom>{`${word} `}</RevealFromBottom>
 							))}
 						</p>
-						<p className="flex flex-wrap">
-							<RevealFromBottom>
-								Let's make coding fun – one bug at a time!
-							</RevealFromBottom>
+						<p className="flex flex-wrap break-words">
+							{paragraph3Words.map((word) => (
+								<RevealFromBottom>{`${word} `}</RevealFromBottom>
+							))}
 						</p>
 					</div>
 					<div className="w-full flex items-center justify-center mt-3 p-3">
